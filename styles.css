@@ -1,0 +1,205 @@
+:root {
+  --text: #222;
+  --muted: #666;
+  --line: #e5e5e5;
+  --link: #245aa6;
+  --max-width: 930px;
+}
+
+* { box-sizing: border-box; }
+html { min-height: 100%; }
+body {
+  margin: 0;
+  min-height: 100%;
+  color: var(--text);
+  background: #fff;
+  font-family: "Google Sans", "Google Sans Text", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.58;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.site {
+  width: min(calc(100% - 40px), var(--max-width));
+  margin: 0 auto;
+  padding: 42px 0 54px;
+}
+
+header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 28px;
+  padding-bottom: 13px;
+  border-bottom: 1px solid var(--line);
+}
+
+.site-name {
+  margin: 0;
+  font-size: 25px;
+  line-height: 1.15;
+  font-weight: 500;
+  letter-spacing: -.02em;
+}
+.site-name a { color: var(--text); text-decoration: none; }
+
+.nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 22px;
+  font-size: 15px;
+}
+.nav a {
+  color: #555;
+  padding-bottom: 3px;
+  text-decoration: none;
+}
+.nav a:hover,
+.nav a[aria-current="page"] {
+  color: var(--text);
+}
+.nav a[aria-current="page"] {
+  border-bottom: 2px solid #333;
+}
+
+main { padding-top: 46px; }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 48px;
+  align-items: start;
+}
+
+.portrait {
+  display: block;
+  width: 260px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center 24%;
+  border-radius: 50%;
+}
+
+.contact-links {
+  margin-top: 14px;
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--muted);
+}
+.contact-links a { white-space: nowrap; }
+.contact-links .sep { color: #bbb; padding: 0 5px; }
+
+h1, h2, h3 { color: var(--text); font-weight: 500; }
+.page-title {
+  margin: 0 0 25px;
+  font-size: 28px;
+  line-height: 1.2;
+  letter-spacing: -.02em;
+}
+.about-copy .page-title { margin-bottom: 18px; }
+
+p { margin: 0 0 15px; }
+strong { font-weight: 500; }
+
+.current-interest {
+  margin-top: 21px;
+}
+.current-interest strong { font-weight: 500; }
+
+.section {
+  margin-top: 42px;
+}
+.section h2 {
+  margin: 0 0 14px;
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+.news-list,
+.simple-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.news-list li {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  gap: 13px;
+  margin: 0 0 10px;
+}
+.news-date { color: var(--muted); }
+
+.page-copy { max-width: 800px; }
+
+.pub-list { margin-top: 2px; }
+.pub-year {
+  margin: 34px 0 13px;
+  font-size: 20px;
+  font-weight: 500;
+}
+.pub-year:first-child { margin-top: 0; }
+.publication { margin-bottom: 22px; }
+.publication-title { margin: 0 0 3px; font-weight: 500; }
+.publication-authors,
+.publication-venue,
+.publication-links { margin: 0; }
+.publication-authors { color: #333; }
+.publication-venue { color: var(--muted); font-style: italic; }
+.publication-links { margin-top: 2px; font-size: 14px; }
+
+.talk-list { margin-top: 2px; }
+.talk {
+  display: grid;
+  grid-template-columns: 116px minmax(0, 1fr);
+  gap: 18px;
+  padding: 0 0 25px;
+}
+.talk-date { color: var(--muted); }
+.talk h2 {
+  margin: 0 0 4px;
+  font-size: 17px;
+  line-height: 1.4;
+}
+.talk p { margin: 0; color: var(--muted); }
+
+.page-intro { margin: -8px 0 28px; color: var(--muted); }
+.activity-list { margin-top: 2px; }
+.activity {
+  display: grid;
+  grid-template-columns: 116px minmax(0, 1fr);
+  gap: 18px;
+  padding: 0 0 25px;
+}
+.activity-date { color: var(--muted); }
+.activity h2 {
+  margin: 0 0 4px;
+  font-size: 17px;
+  line-height: 1.4;
+}
+.activity p { margin: 0; color: var(--muted); }
+.featured-list li { margin-bottom: 8px; }
+
+footer {
+  margin-top: 54px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  color: #888;
+  font-size: 12px;
+}
+
+@media (max-width: 700px) {
+  .site { width: min(calc(100% - 30px), var(--max-width)); padding-top: 28px; }
+  header { display: block; }
+  .nav { gap: 17px; margin-top: 17px; }
+  main { padding-top: 34px; }
+  .about-grid { grid-template-columns: 1fr; gap: 27px; }
+  .portrait { width: min(260px, 75vw); }
+  .news-list li, .talk, .activity { grid-template-columns: 1fr; gap: 2px; }
+  .talk, .activity { padding-bottom: 23px; }
+}
