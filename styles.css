@@ -177,7 +177,8 @@ strong { font-weight: 500; }
   padding: 0 0 25px;
 }
 .activity-date { color: var(--muted); }
-.activity h2 {
+.activity h2,
+.activity h3 {
   margin: 0 0 4px;
   font-size: 17px;
   line-height: 1.4;
